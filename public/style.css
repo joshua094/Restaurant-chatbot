@@ -1,0 +1,216 @@
+/* html, body {
+    height: 100%;
+} */
+
+:root {
+	--dark-color-a: rgb(202, 202, 17);
+	--dark-color-b: rgb(182, 182, 24);
+	--light-color: rgb(77, 77, 156);
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url("./img/lily-banse--YHSwy6uqvk-unsplash.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    font-size: 17px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  background-color: rgba(21, 21, 21, 0.60);
+  color: white;
+}
+
+#leftnav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#leftnav a, #rightnav a {
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  color: white;
+  text-decoration: none;
+}
+
+#centernav {
+  margin-left: 20px;
+  padding-left: 10px;
+  font-size: 35px;
+  text-align: center;
+  margin: auto;
+}
+  
+
+#rightnav {
+ /* margin-top: 10px; */
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-left: 20px;
+  margin-right: 60px;
+  margin-left: auto;
+}
+
+#rightnav > p {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(202, 202, 17);
+    color: rgb(55, 55, 180);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+
+#mainBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#mainBody p {
+    color: white;
+    font-size: 35px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#mainBodyLink {
+    height: 50px;
+    width: 200px;
+    background-color: rgb(202, 202, 17);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#mainBodyLink a {
+    text-decoration: none;
+    color: rgb(55, 55, 180);
+}
+
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
+}
+
+#chat-container {
+	max-width: 1100px;
+	background: #fff;
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+#chat-header {
+	background: var(--dark-color-a);
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+	background: var(--dark-color-b);
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: scroll;
+}
+
+/* .chat-sidebar h2 {
+	font-size: 20px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	margin-bottom: 20px;
+} */
+
+.chat-sidebar h3 {
+	margin-bottom: 15px;
+}
+
+.chat-sidebar ul li {
+	padding: 10px 0;
+}
+
+.chat-messages {
+	padding: 30px;
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.chat-messages .message {
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: var(--light-color);
+	border-radius: 5px;
+}
+
+.chat-messages .message .meta {
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--dark-color-b);
+	opacity: 0.7;
+	margin-bottom: 7px;
+}
+
+.chat-messages .message .meta span {
+	color: #777;
+}
+
+.chat-form-container {
+	padding: 20px 30px;
+	background-color: var(--dark-color-a);
+}
+
+.chat-form-container form {
+	display: flex;
+}
+
+.chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
