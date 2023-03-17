@@ -191,7 +191,7 @@ document.body.addEventListener("click", function (event) {
           div.innerHTML = `<p class="meta">Order bot  <span>${currentTime}</span></p>
             <p class="text">
             <p>${orderHistory.toString()}</p>
-            <p>Price: ${price}</p>
+            <p>Total Price: ₦${price}</p>
             <p>Order has been placed successfully and will be delivered soon.</p>
             </p>`;
           document.querySelector(".chat-messages").appendChild(div);
