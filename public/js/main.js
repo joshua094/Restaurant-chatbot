@@ -6,13 +6,12 @@ let price = 0;
 let currentOrder = "";
 
 let date = new Date();
-let currentTime = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+let currentTime =
+  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
 //Message Submit
 
 document.body.addEventListener("click", function (event) {
-
-
   if (event.target.id == "btnSubmit") {
     chatForm.addEventListener(
       "submit",
@@ -32,44 +31,45 @@ document.body.addEventListener("click", function (event) {
 
         if (msg == "0") {
           if (orderHistory.length === 0) {
-            noOrder()
-          }
-          else {
+            noOrder();
+          } else {
             if (currentOrder === "Slow cooker taco soup at ₦1000") {
-              price = price - 1000
-              removeOrder()
-            }
-            else if (currentOrder === "Slow-cooked beef casserole taco soup at ₦1500") {
-              price = price - 1500
-              removeOrder()
-            }
-            else if (currentOrder === "Lemon and herb roast chicken at ₦1200") {
-              price = price - 1200
-              removeOrder()
-            }
-            else if (currentOrder === "Green Pickled potato salad at ₦1500") {
-              price = price - 1500
-              removeOrder()
-            }
-            else if (currentOrder === "Roast Carrots with Populate Hummus and Green Tahini at ₦800") {
-              price = price - 800
-              removeOrder()
-            }
-            else if (currentOrder === "Prawn Sliders with Sriracha Mayo taco soup at ₦1100") {
-              price = price - 1100
-              removeOrder()
-            }
-            else if (currentOrder === "Turmeric Chicken Noodle Soup taco soup at ₦1500") {
-              price = price - 1500
-              removeOrder()
-            }
-            else {
-              noOrder()
+              price = price - 1000;
+              removeOrder();
+            } else if (
+              currentOrder === "Slow-cooked beef casserole taco soup at ₦1500"
+            ) {
+              price = price - 1500;
+              removeOrder();
+            } else if (
+              currentOrder === "Lemon and herb roast chicken at ₦1200"
+            ) {
+              price = price - 1200;
+              removeOrder();
+            } else if (currentOrder === "Green Pickled potato salad at ₦1500") {
+              price = price - 1500;
+              removeOrder();
+            } else if (
+              currentOrder ===
+              "Roast Carrots with Populate Hummus and Green Tahini at ₦800"
+            ) {
+              price = price - 800;
+              removeOrder();
+            } else if (
+              currentOrder ===
+              "Prawn Sliders with Sriracha Mayo taco soup at ₦1100"
+            ) {
+              price = price - 1100;
+              removeOrder();
+            } else if (
+              currentOrder === "Turmeric Chicken Noodle Soup taco soup at ₦1500"
+            ) {
+              price = price - 1500;
+              removeOrder();
+            } else {
+              noOrder();
             }
           }
-
-
-
         } else if (msg == "1") {
           const div = document.createElement("div");
           div.classList.add("message");
@@ -140,7 +140,8 @@ document.body.addEventListener("click", function (event) {
             Roast Carrots with Populate Hummus and Green Tahini sucessfully added to orders
             </p>`;
           document.querySelector(".chat-messages").appendChild(div);
-          let order = "Roast Carrots with Populate Hummus and Green Tahini at ₦800";
+          let order =
+            "Roast Carrots with Populate Hummus and Green Tahini at ₦800";
           orderHistory.push(order);
           currentOrder = order;
           price = price + 800;
@@ -169,14 +170,22 @@ document.body.addEventListener("click", function (event) {
           currentOrder = order;
           price = price + 1500;
         } else if (msg == "97") {
+          if (orderHistory.length === 0) {
+            noOrder();
+          }
+          else {
           const div = document.createElement("div");
           div.classList.add("message");
           div.innerHTML = `<p class="meta">Order bot  <span>${currentTime}</span></p>
             <p class="text">
                 ${currentOrder}
             </p>`;
-          document.querySelector(".chat-messages").appendChild(div);
+          document.querySelector(".chat-messages").appendChild(div);}
         } else if (msg == "98") {
+          if (orderHistory.length == 0) {
+            noOrder();
+          }
+          else {
           const div = document.createElement("div");
           div.classList.add("message");
           div.innerHTML = `<p class="meta">Order bot  <span>${currentTime}</span></p>
@@ -184,8 +193,12 @@ document.body.addEventListener("click", function (event) {
                <p>${orderHistory.toString()}</p>
                <p>Total Price: ₦${price}</p>
             </p>`;
-          document.querySelector(".chat-messages").appendChild(div);
+          document.querySelector(".chat-messages").appendChild(div);}
         } else if (msg == "99") {
+          if (orderHistory.length === 0) {
+            noOrder();
+          }
+          else {
           const div = document.createElement("div");
           div.classList.add("message");
           div.innerHTML = `<p class="meta">Order bot  <span>${currentTime}</span></p>
@@ -195,6 +208,9 @@ document.body.addEventListener("click", function (event) {
             <p>Order has been placed successfully and will be delivered soon.</p>
             </p>`;
           document.querySelector(".chat-messages").appendChild(div);
+          orderHistory = [];
+          price = 0;
+          currentOrder = "";}
         } else {
           const div = document.createElement("div");
           div.classList.add("message");
@@ -218,7 +234,6 @@ document.body.addEventListener("click", function (event) {
   }
 });
 
-
 function removeOrder() {
   const div = document.createElement("div");
   div.classList.add("message");
@@ -227,8 +242,8 @@ function removeOrder() {
                   ${currentOrder} has been successfully removed
               </p>`;
   document.querySelector(".chat-messages").appendChild(div);
-  orderHistory.pop()
-  currentOrder = orderHistory[orderHistory.length - 1]
+  orderHistory.pop();
+  currentOrder = orderHistory[orderHistory.length - 1];
 }
 
 function noOrder() {
@@ -236,7 +251,7 @@ function noOrder() {
   div.classList.add("message");
   div.innerHTML = `<p class="meta">Order bot  <span>${currentTime}</span></p>
               <p class="text">
-                  <p>No order to cancel</p>
+                  <p>No order to yet</p>
                   <p>Order first</p>
                   <p>Select 11 to order "Slow cooker taco soup for ₦1000"</p>
             <p>Select 12 to order "Slow-cooked beef casserole for ₦1500"</p>
