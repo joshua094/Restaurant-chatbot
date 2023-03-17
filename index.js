@@ -27,12 +27,12 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
 
-// app.get('/', (req, res) => {
-//     if (req.session.views) {
-//       req.session.views++;
-//     }
-//     else {
-//       req.session.views = 1;
-//     }
-//     res.send(`${req.session.views} views`);
-//   })
+app.get('/', (req, res) => {
+    if (req.session.views) {
+      req.session.views++;
+    }
+    else {
+      req.session.views = 1;
+    }
+    res.send(`${req.session.views} views`);
+  })

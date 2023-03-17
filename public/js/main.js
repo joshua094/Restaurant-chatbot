@@ -6,7 +6,7 @@ let price = 0;
 let currentOrder = "";
 
 let date = new Date();
-let currentTime = date.getHours() + ":" + date.getMinutes()
+let currentTime = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
 
 //Message Submit
 
