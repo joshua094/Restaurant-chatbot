@@ -5,9 +5,9 @@
 :root {
 	--dark-color-a: rgb(202, 202, 17);
 	--dark-color-b: rgb(182, 182, 24);
-	--light-color: rgb(77, 77, 156);
+	--light-color: rgb(147, 77, 156);
 	--success-color: #5cb85c;
-	--error-color: #d9534f;
+	--error-color: #e45c57;
 }
 
 * {
